@@ -1,0 +1,8 @@
+# Ignore model files
+*.h5
+
+# Ignore TensorFlow internal files
+*.pyd
+
+# Ignore virtual environment
+env/
