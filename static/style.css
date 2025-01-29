@@ -1,0 +1,82 @@
+/* Global Body Styles */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+/* Card Styling */
+.card {
+    background: linear-gradient(135deg, #ffffff, #e9f0fa);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    max-width: 1100px;
+    padding: 50px;
+    border: none;
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: auto;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #07b687;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+/* Form Input Styling */
+input[type="file"], textarea {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Alert Styling */
+.alert {
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
