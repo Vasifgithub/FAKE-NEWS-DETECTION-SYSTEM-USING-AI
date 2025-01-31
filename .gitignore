@@ -1,7 +1,4 @@
 venv/
 
-# Ignore large files
-*.pkl
-*.h5
-*.pyd
-env/
+
+
