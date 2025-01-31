@@ -12,7 +12,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
 
 # Load the image model (for image prediction)
-image_model = load_model('Fake_News_Detection.h5')
+image_model = load_model('fakenewsimagedetection.h5')
 
 # Load the text model (for text prediction)
 text_model = load_model('lstm_model.h5')
