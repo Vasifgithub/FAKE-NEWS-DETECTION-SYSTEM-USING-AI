@@ -1,31 +1,20 @@
-# === Python Bytecode ===
-__pycache__/
-*.py[cod]
-*$py.class
-
-# === Virtual Environment ===
+# Ignore virtual environment
 venv/
+__pycache__/
+*.pyc
 
-# === Model and Vectorizer Files (Large Files) ===
-*.pkl filter=lfs diff=lfs merge=lfs -text
-*.h5 filter=lfs diff=lfs merge=lfs -text
+# Ignore model files if using LFS instead
+*.pkl
+*.h5
 
-
-# === Project-specific folders ===
+# Ignore uploads (if storing test images or results)
 uploads/
 
-# === Jupyter Notebook Checkpoints (if used) ===
-.ipynb_checkpoints/
-
-# === OS / Editor Files ===
+# System files
 .DS_Store
-Thumbs.db
-.vscode/
 
-# === Environment / Dependency Files ===
-.env
-*.env
-
-# === Node.js related (in case frontend used JS) ===
+# Node dependencies (if used)
 node_modules/
-package-lock.json
+
+# VS Code settings (optional)
+.vscode/
