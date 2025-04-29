@@ -12,6 +12,7 @@ uploads/
 
 # Ignore virtual environments
 venv/
+env/
 
 # Ignore Python cache
 __pycache__/
