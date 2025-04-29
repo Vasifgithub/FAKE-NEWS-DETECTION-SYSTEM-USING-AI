@@ -1,7 +1,31 @@
-venv/
-
-
-
-venv/
-*.pyc
+# === Python Bytecode ===
 __pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual Environment ===
+venv/
+
+# === Model and Vectorizer Files (Large Files) ===
+*.pkl filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+
+
+# === Project-specific folders ===
+uploads/
+
+# === Jupyter Notebook Checkpoints (if used) ===
+.ipynb_checkpoints/
+
+# === OS / Editor Files ===
+.DS_Store
+Thumbs.db
+.vscode/
+
+# === Environment / Dependency Files ===
+.env
+*.env
+
+# === Node.js related (in case frontend used JS) ===
+node_modules/
+package-lock.json
