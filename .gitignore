@@ -1,20 +1,11 @@
 # Ignore virtual environment
 venv/
+
+# Ignore model files
+*.h5
+*.pkl
+
+# Ignore other unnecessary files
 __pycache__/
 *.pyc
-
-# Ignore model files if using LFS instead
-*.pkl
-*.h5
-
-# Ignore uploads (if storing test images or results)
-uploads/
-
-# System files
 .DS_Store
-
-# Node dependencies (if used)
-node_modules/
-
-# VS Code settings (optional)
-.vscode/
