@@ -22,18 +22,11 @@
                 <button type="submit" class="btn btn-primary w-100">Predict</button>
             </form>
 
-            <!-- Result Section -->
-            {% if text_result %}
+            <!-- ONLY CHANGED SECTION -->
+            {% if text_result is not none %}
                 <div class="mt-4 alert {% if text_result == 'FAKE-NEWS' %}alert-danger{% else %}alert-success{% endif %} text-center">
                     <h5>Model Used: <strong>XGBoost</strong></h5>
                     <h4>Prediction: <strong>{{ text_result }}</strong></h4>
-                </div>
-            {% endif %}
-
-            <!-- Error Messages -->
-            {% if error_message %}
-                <div class="mt-4 alert alert-warning text-center">
-                    <h4>{{ error_message }}</h4>
                 </div>
             {% endif %}
         </div>
