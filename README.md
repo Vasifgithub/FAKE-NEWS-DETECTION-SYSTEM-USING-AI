@@ -1,10 +1,6 @@
 
 # 🕵️♂️ Fake News Detection System Using AI
 
-![Python Version](https://img.shields.io/badge/python-3.11%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-
 A powerful machine learning web application that detects fake news articles.
 This project is a web-based Fake News Detection system that uses a pre-trained XGBoost model to classify whether a given news text is Real or Fake (Rumor).
 Built using Flask, Bootstrap 5, and XGBoost, this app provides a simple and attractive user interface where users can paste a news article and get instant predictions.
@@ -30,6 +26,7 @@ Built using Flask, Bootstrap 5, and XGBoost, this app provides a simple and attr
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-21.2.0-important)
 
 **Frontend**  
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple)
 ![CSS3](https://img.shields.io/badge/CSS3-Animation-blue)
 
