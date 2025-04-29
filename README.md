@@ -1,105 +1,69 @@
- Fake News Detection Using-AI
-This project is a web-based Fake News Detection system that uses a pre-trained XGBoost model to classify whether a given news text is Real or Fake (Rumor).
 
+# 🕵️♂️ Fake News Detection System Using AI
+
+![Python Version](https://img.shields.io/badge/python-3.11%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+
+A powerful machine learning web application that detects fake news articles.
+This project is a web-based Fake News Detection system that uses a pre-trained XGBoost model to classify whether a given news text is Real or Fake (Rumor).
 Built using Flask, Bootstrap 5, and XGBoost, this app provides a simple and attractive user interface where users can paste a news article and get instant predictions.
 
-📋 Features
-🧠 Fake News detection using a high-accuracy XGBoost model.
+![Demo Screenshot](image.png)
 
-✨ Clean and responsive UI designed with Bootstrap 5.
+## Features
+-  Text input interface for news articles
+-  Real-time predictions using XGBoost model
+-  Modern UI with gradient design and animations
+-  Color-coded results (Green for Real/Red for Fake)
+-  Input validation and error handling
+-  Fully responsive design
 
-📜 Single model setup for consistent and reliable predictions.
+## 🛠️ Technologies Used
+**ML & NLP**  
+![XGBoost](https://img.shields.io/badge/XGBoost-1.7.6-orange)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3.2-blue)
+![TF-IDF](https://img.shields.io/badge/TF--IDF-Vectorization-yellowgreen)
 
-⚡ Fast and lightweight Flask application.
+**Backend**  
+![Flask](https://img.shields.io/badge/Flask-2.3.2-lightgrey)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-21.2.0-important)
 
-🛠️ Tech Stack
-Frontend: HTML5, CSS3, Bootstrap 5
+**Frontend**  
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple)
+![CSS3](https://img.shields.io/badge/CSS3-Animation-blue)
 
-Backend: Python (Flask)
+**Deployment**  
+![Render](https://img.shields.io/badge/Deployment-Render-blueviolet)
 
-Model: XGBoost Classifier (pre-trained)
 
-Other Tools: Scikit-learn, Pandas, Numpy
+## 🚀 Quick Start
 
-🖥️ Screenshots
+### Prerequisites
+- Python 3.11+
+- Git
+- Git LFS (for model files)
 
-Home Page	Prediction Result
-(You can add your real screenshots later)
-
-⚙️ Installation and Setup
-1. Clone the repository
-bash
-Copy
-Edit
+```bash
+# Clone repository
 git clone https://github.com/yourusername/fake-news-detection.git
 cd fake-news-detection
-2. Create a virtual environment (optional but recommended)
-bash
-Copy
-Edit
+
+# Install Git LFS and pull models
+git lfs install
+git lfs fetch --all
+git lfs pull
+
+# Create virtual environment
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-3. Install dependencies
-bash
-Copy
-Edit
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate    # Windows
+
+# Install dependencies
 pip install -r requirements.txt
-Example requirements.txt:
 
-nginx
-Copy
-Edit
-Flask
-scikit-learn
-xgboost
-numpy
-pandas
-(You can generate it with pip freeze > requirements.txt)
-
-4. Place the pre-trained model
-Save your trained XGBoost model file (example: xgboost_model.pkl) inside the project directory.
-
-5. Run the Flask App
-bash
-Copy
-Edit
+# Run application
 python app.py
-The app will be running at http://127.0.0.1:5000
 
-📁 Project Structure
-csharp
-Copy
-Edit
-fake-news-detection/
-│
-├── static/
-│   └── style.css         # Custom CSS styles
-│
-├── templates/
-│   └── index.html        # Frontend HTML page
-│
-├── app.py                # Flask application
-├── xgboost_model.pkl      # Pre-trained XGBoost model
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
-✨ Future Improvements
-Add model retraining feature with new datasets.
-
-Show probability/confidence scores with prediction.
-
-Deploy the app on platforms like Render, Vercel, or AWS.
-
-🤝 Acknowledgements
-XGBoost Official Documentation
-
-Flask Documentation
-
-Bootstrap Documentation
-
-📜 License
-This project is licensed under the MIT License.
-
-🔥 Author
-Wasif
-
+```
 Passionate about AI, Deep Learning, and building meaningful projects.
