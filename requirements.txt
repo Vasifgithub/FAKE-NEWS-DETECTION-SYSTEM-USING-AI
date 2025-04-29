@@ -34,3 +34,5 @@ tensorboard==2.18.0
 tensorflow==2.18.0
 tensorflow-io-gcs-filesystem==0.31.0
 Werkzeug==3.0.2  # Explicitly set compatible version
+# Add this line at the end
+gunicorn==21.2.0  # Stable version for Flask 3.0.2
