@@ -1,19 +1,28 @@
-# Ignore model and ML files
-*.h5
-*.pkl
-
-# Ignore vectorizer and tokenizer
-tokenizer.pkl
-tfidf_vectorizer.pkl
-
-# Ignore dataset or upload folders if large
-Dataset/
-uploads/
-
-# Ignore virtual environments
+# Virtual Environments
 venv/
 env/
+pyvenv.cfg
 
-# Ignore Python cache
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# User Uploads (if any)
+uploads/
+
+# Node.js (if package-lock.json is accidental)
+node_modules/
+
+# Local Development
+*.env
+*.log
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
