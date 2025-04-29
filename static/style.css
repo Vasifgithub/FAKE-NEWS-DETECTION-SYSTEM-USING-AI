@@ -7,7 +7,7 @@ body {
 }
 
 .card {
-    background: linear-gradient(135deg, #ffffff, #e9f0fa);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     max-width: 1200px;
@@ -33,6 +33,9 @@ textarea {
     margin: 15px 0;
     font-size: 1.2rem;
     resize: vertical;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
 }
 
 .btn-primary {
@@ -41,6 +44,8 @@ textarea {
     border-radius: 25px;
     font-weight: bold;
     font-size: 1.2rem;
+    border: none;
+    padding: 12px 24px;
 }
 
 .btn-primary:hover {
@@ -49,25 +54,25 @@ textarea {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-select.form-select {
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 10px;
-}
-
 .alert {
     font-size: 1.3rem;
     font-weight: bold;
     border-radius: 10px;
     padding: 15px;
-}
-
-.alert-danger {
-    background-color: #ff6b6b;
-    color: white;
+    border: none;
 }
 
 .alert-success {
-    background-color: #4caf50;
+    background: #4CAF50;
+    color: white;
+}
+
+.alert-danger {
+    background: #f44336;
+    color: white;
+}
+
+.alert-warning {
+    background: #ff9800;
     color: white;
 }
