@@ -1,14 +1,17 @@
-# Ignore model and vectorizer files
+# Ignore all model and vectorizer files
 *.h5
 *.pkl
 
-# Ignore tokenizer/vectorizer
-tokenizer.pkl
-tfidf_vectorizer.pkl
+# Ignore dataset and uploads
+project/Dataset/
+project/uploads/
 
 # Ignore virtual environment
 venv/
 
-# Ignore cache
+# Ignore Python cache files
 __pycache__/
 *.pyc
+
+/models/
+
