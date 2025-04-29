@@ -1,4 +1,4 @@
- Fake News Detection using XGBoost
+ Fake News Detection Using-AI
 This project is a web-based Fake News Detection system that uses a pre-trained XGBoost model to classify whether a given news text is Real or Fake (Rumor).
 
 Built using Flask, Bootstrap 5, and XGBoost, this app provides a simple and attractive user interface where users can paste a news article and get instant predictions.
