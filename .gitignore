@@ -7,6 +7,7 @@ pyvenv.cfg
 __pycache__/
 *.py[cod]
 
+models/
 # IDE Files
 .vscode/
 .idea/
