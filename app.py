@@ -10,6 +10,7 @@ app = Flask(__name__)
 # Configuration
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1v5v-en6oV2go7m6_AtLz3KMmesEbGQiB"
 VECTORIZER_URL = "https://drive.google.com/uc?export=download&id=1z4OiTd-avYs1tDLnbMaXz7GTNRCEobQS"
+
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
 
 def download_file(url, save_path):
