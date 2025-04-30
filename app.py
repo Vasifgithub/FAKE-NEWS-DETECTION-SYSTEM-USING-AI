@@ -42,8 +42,8 @@ def download_file(url, save_path):
 
 def load_models():
     """Robust model loading with validation"""
-    model_path = os.path.join(MODEL_DIR, "XGBoost.joblib")
-    vectorizer_path = os.path.join(MODEL_DIR, "tfidf_vectorizer.joblib")
+    model_path = os.path.join(MODEL_DIR, "XGBoost.pkl")
+    vectorizer_path = os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")
 
     # Clean existing files
     for path in [model_path, vectorizer_path]:
