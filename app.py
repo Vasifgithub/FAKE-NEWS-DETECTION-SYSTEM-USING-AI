@@ -3,18 +3,21 @@ import joblib
 import os
 import requests
 import re
-import numpy as np
+import numpy as np  # Imported first for version control
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Validate critical dependencies immediately
+assert np.__version__ == '1.23.5', f"Invalid numpy version: {np.__version__}"
 
 app = Flask(__name__)
 
-# Configuration
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1v5v-en6oV2go7m6_AtLz3KMmesEbGQiB"
-VECTORIZER_URL = "https://drive.google.com/uc?export=download&id=1z4OiTd-avYs1tDLnbMaXz7GTNRCEobQS"
+# Configuration - Use direct download URLs (not Google Drive)
+MODEL_URL = "https://your-domain.com/models/XGBoost.pkl"
+VECTORIZER_URL = "https://your-domain.com/models/tfidf_vectorizer.pkl"
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
 
-def get_google_drive_file(url):
-    """Handle Google Drive downloads with confirmation"""
+def handle_google_drive(url):
+    """Proper Google Drive download handling with confirmation"""
     session = requests.Session()
     
     # Initial request to get cookies
@@ -27,23 +30,23 @@ def get_google_drive_file(url):
         if key.startswith('download_warning'):
             token = value
     
-    # Make confirmed download URL
+    # Build confirmed URL
     if token:
         url = f"{url}&confirm={token}"
     
     return session.get(url, stream=True)
 
 def download_file(url, path):
-    """Robust download with retries and validation"""
+    """Secure file download with validation"""
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         
-        # Remove existing corrupted files
+        # Remove existing file
         if os.path.exists(path):
             os.remove(path)
         
         print(f"Downloading {os.path.basename(path)}...")
-        response = get_google_drive_file(url)
+        response = handle_google_drive(url)
         response.raise_for_status()
 
         # Write file
@@ -56,64 +59,54 @@ def download_file(url, path):
         if os.path.getsize(path) < 1024:
             raise ValueError("File too small")
         
-        # Quick load validation
-        try:
-            joblib.load(path)
-        except Exception as e:
-            print(f"File validation failed: {str(e)}")
-            os.remove(path)
-            return False
+        # Load test
+        _ = joblib.load(path)
         
         print(f"Downloaded {os.path.basename(path)} ({os.path.getsize(path)/1024:.1f} KB)")
         return True
-        
     except Exception as e:
-        print(f"Download error: {str(e)}")
+        print(f"Download failed: {str(e)}")
         if os.path.exists(path):
             os.remove(path)
         return False
 
 def load_models():
-    """Load models with version compatibility"""
-    os.makedirs(MODEL_DIR, exist_ok=True)
-    
+    """Load models with version validation"""
     model_path = os.path.join(MODEL_DIR, "XGBoost.pkl")
     vectorizer_path = os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")
-
-    # Download models with retries
-    for _ in range(3):  # 3 retries
+    
+    # Download with 3 retries
+    for attempt in range(3):
         if download_file(MODEL_URL, model_path) and \
            download_file(VECTORIZER_URL, vectorizer_path):
             break
+        print(f"Retry {attempt + 1}/3")
     else:
-        raise RuntimeError("Failed to download model files after 3 attempts")
+        raise RuntimeError("Failed to download models after 3 attempts")
 
     # Force numpy initialization
     _ = np.array([0])
     
     # Load models
-    model, vectorizer = None, None
     try:
         model = joblib.load(model_path)
-        print(f"XGBoost loaded | NumPy {np.__version__} | XGB {model.__class__.__module__}")
+        print(f"XGBoost loaded | XGBoost {model.__class__.__module__}")
     except Exception as e:
-        print(f"Model load error: {str(e)}")
-        raise
+        raise RuntimeError(f"Model load failed: {str(e)}")
 
     try:
         vectorizer = joblib.load(vectorizer_path)
         print(f"Vectorizer loaded | Features: {len(vectorizer.get_feature_names_out())}")
     except Exception as e:
-        print(f"Vectorizer error: {str(e)}")
-        raise
+        raise RuntimeError(f"Vectorizer load failed: {str(e)}")
 
     return model, vectorizer
 
-# Initialize models at startup
+# Initialize models
 model, tfidf_vectorizer = load_models()
 
 def preprocess_text(text):
-    """Text preprocessing with validation"""
+    """Text preprocessing with error handling"""
     if text and tfidf_vectorizer:
         try:
             return tfidf_vectorizer.transform([text.strip()])
