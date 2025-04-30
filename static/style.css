@@ -57,9 +57,13 @@ select.form-select {
 
 /* ONLY ADD THESE 2 CLASSES */
 .alert-danger {
-    background-color: #ff4444 !important; /* Bright red for FAKE-NEWS */
+    background-color: #de1515 !important; /* Bright red for FAKE-NEWS */
+    color: #fff !important; /* White text for better contrast */
+    font-weight: bold; /* Bold text for emphasis */
 }
 
 .alert-success {
     background-color: #00C851 !important; /* Vibrant green for TRUE-NEWS */
+    color: #fff !important; /* White text for better contrast */
+    font-weight: bold; /* Bold text for emphasis */
 }
