@@ -13,7 +13,7 @@ MODEL_DIR = os.path.join(BASE_DIR, "models")
 
 # Load XGBoost model
 try:
-    model_path = os.path.join(MODEL_DIR, "XGBoost.pkl")
+    model_path = os.path.join(MODEL_DIR, "models/XGBoost.pkl")
     model = joblib.load(model_path)
     print("XGBoost model loaded successfully.")
 except Exception as e:
@@ -22,7 +22,7 @@ except Exception as e:
 
 # Load TF-IDF vectorizer
 try:
-    vectorizer_path = os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl")
+    vectorizer_path = os.path.join(MODEL_DIR, "models/tfidf_vectorizer.pkl")
     with open(vectorizer_path, "rb") as f:
         tfidf_vectorizer = pickle.load(f)
     print("TF-IDF Vectorizer loaded successfully.")
