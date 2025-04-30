@@ -4,7 +4,7 @@ blinker==1.9.0
 certifi==2025.1.31
 charset-normalizer==3.4.1
 click==8.1.8
-Flask==3.0.2  # Downgraded to match Werkzeug
+Flask==3.0.0  # Downgraded for compatibility
 flatbuffers==25.1.24
 gast==0.6.0
 google-pasta==0.2.0
@@ -13,7 +13,7 @@ h5py==3.12.1
 idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.5
-joblib==1.4.2
+joblib==1.3.2  # Specific version for model compatibility
 libclang==18.1.1
 Markdown==3.7
 markdown-it-py==3.0.0
@@ -26,14 +26,13 @@ opt_einsum==3.4.0
 optree==0.14.0
 packaging==24.2
 protobuf==3.20.3
-requests==2.32.3
-scikit-learn==1.6.1
+requests==2.31.0  # Specific version for stability
+scikit-learn==1.3.2  # Critical for TF-IDF vectorizer
 scipy==1.13.0
 six==1.17.0
 tensorboard==2.18.0
 tensorflow==2.18.0
 tensorflow-io-gcs-filesystem==0.31.0
-Werkzeug==3.0.2  # Explicitly set compatible version
-# Add this line at the end
-gunicorn==21.2.0  # Stable version for Flask 3.0.2
-xgboost==2.0.3  # Latest stable version
+Werkzeug==3.0.2
+xgboost==1.7.3  # Specific version matching trained models
+gunicorn==21.2.0  # Production server
